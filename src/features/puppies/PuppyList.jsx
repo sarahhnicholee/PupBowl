@@ -3,8 +3,22 @@
  * Shows a list of puppies in the roster.
  * Users can select a puppy to see more information about it.
  */
+
+// import { useGetUsersQuery, useDeleteUserMutation } from "./UsersSlice";
+import {useGetPuppiesQuery} from "./puppySlice"
+
 export default function PuppyList({ setSelectedPuppyId }) {
   // TODO: Get data from getPuppies query
+const { data: puppies, isLoading, error } = useGetPuppiesQuery();
+
+if(isLoading){
+  return <p>Loading.....</p>
+}
+
+if(error){
+  return <p>There was an error: {error.message}</p>
+}
+
 
   return (
     <article>

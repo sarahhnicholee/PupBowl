@@ -1,14 +1,8 @@
-import { useState } from "react";
-
-import { Provider } from "react-redux";
-import store from "./store/store";
-
 import PuppyDetails from "./features/puppies/PuppyDetails";
 import PuppyList from "./features/puppies/PuppyList";
 import PuppyForm from "./features/puppies/PuppyForm";
-
 import "./App.scss";
-
+import { useState } from "react";
 /**
  * @component
  * This app shows a list of puppy bowl players from the API.
@@ -19,7 +13,7 @@ export default function App() {
   const [selectedPuppyId, setSelectedPuppyId] = useState();
 
   return (
-    <Provider store={store}>
+    <>
       <h1>Puppy Bowl</h1>
       <PuppyForm />
       <main>
@@ -29,6 +23,6 @@ export default function App() {
           setSelectedPuppyId={setSelectedPuppyId}
         />
       </main>
-    </Provider>
+    </>
   );
 }
