@@ -8,23 +8,23 @@ export default function PuppyForm() {
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
 
-  const [addPuppy, { isLoading, error }] = useAddPuppyMutation()
+  const [addPuppy, { isLoading, error }] = useAddPuppyMutation();
   // TODO: Use the `addPuppy` mutation to add a puppy when the form is submitted
 
   async function postPuppy(event) {
     event.preventDefault();
     const imageUrl = "https://loremflickr.com/200/300/dog";
 
-    await addPuppy({ name, breed, imageUrl })
+    await addPuppy({ name, breed, imageUrl });
     // Placeholder image w/ random photos of dogs
-    setName('');
-    setBreed('');
+    setName("");
+    setBreed("");
     window.location.reload();
   }
 
   return (
     <>
-      <h2>Add a Puppy</h2>
+      <h2>Add a Puppy Below!</h2>
       <form onSubmit={postPuppy}>
         <label>
           Name

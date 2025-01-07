@@ -1,7 +1,7 @@
 import PuppyDetails from "./features/puppies/PuppyDetails";
 import PuppyList from "./features/puppies/PuppyList";
 import PuppyForm from "./features/puppies/PuppyForm";
-import "./App.scss";
+import "./App.css";
 import { useState } from "react";
 /**
  * @component
@@ -14,14 +14,14 @@ export default function App() {
 
   return (
     <>
-      <h1>Puppy Bowl</h1>
+      <h1>Puppy Bowl Player Information</h1>
       <PuppyForm />
       <main>
-        <PuppyList setSelectedPuppyId={setSelectedPuppyId} />
         <PuppyDetails
           selectedPuppyId={selectedPuppyId}
           setSelectedPuppyId={setSelectedPuppyId}
         />
+        <PuppyList setSelectedPuppyId={setSelectedPuppyId} />
       </main>
     </>
   );
